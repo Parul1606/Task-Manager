@@ -1,58 +1,55 @@
-import { useState } from 'react';
+import React from 'react';
+import TaskForm from './components/TaskForm';
+import TaskAccordion from '../src/components/TaskAccordian';
+import { useTasks } from './components/taskContext';
 import './App.css';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const { state, dispatch } = useTasks();
 
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-
-  const addTask = () => {
-    if (title && description) {
-      const newTask = {
-        id: Date.now(),
-        title,
-        description
-      };
-      setTasks([...tasks, newTask]);
-      setTitle('');
-      setDescription('');
-    }
+  const addTask = (task) => {
+    dispatch({ type: 'ADD_TASK', payload: { id: Date.now(), ...task, completed: false } });
   };
 
   const deleteTask = (id) => {
-    const updatedTasks = tasks.filter(task => task.id !== id);
-    setTasks(updatedTasks);
+    dispatch({ type: 'DELETE_TASK', payload: id });
   };
+
+  const editTask = (index, updatedTask) => {
+    dispatch({ type: 'EDIT_TASK', payload: { index, updatedTask } });
+  };
+
+  const toggleComplete = (id) => {
+    dispatch({ type: 'TOGGLE_COMPLETE', payload: id });
+  };
+
+  const filteredTasks = state.tasks.filter(task =>
+    task.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+  );
 
   return (
     <div className="app">
-      <h1 className='text-black font-bold'>Task List</h1>
-
-      <div className="task-form">
+      <h1 className="app-title">Task Manager</h1>
+      <TaskForm onAddTask={addTask} />
+      <div className="search-container px-4 py-4">
         <input
           type="text"
-          placeholder="Task Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          className="search-input"
+          placeholder="Search tasks..."
+          value={state.searchTerm}
+          onChange={(e) => dispatch({ type: 'SET_SEARCH_TERM', payload: e.target.value })}
         />
-        <input
-          type="text"
-          placeholder="Task Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button onClick={addTask}>Add Task</button>
       </div>
-
       <ul className="task-list">
-        {tasks.map(task => (
-          <li key={task.id} className="task-item text-black">
-            <div>
-              <h3 className='font-bold'>Title: {task.title}</h3>
-              <p className='font-bold'>Description: {task.description}</p>
-            </div>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
+        {filteredTasks.map((task, index) => (
+          <li key={task.id} className={`task-item ${task.completed ? 'completed-task' : ''}`}>
+            <TaskAccordion
+              task={task}
+              index={index}
+              onDelete={() => deleteTask(task.id)}
+              onEdit={editTask}
+              onToggleComplete={() => toggleComplete(task.id)}
+            />
           </li>
         ))}
       </ul>

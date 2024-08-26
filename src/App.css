@@ -2,91 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure the body takes up the full viewport height */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0; /* Optional: Background color for better visual contrast */
-}
-
 .app {
-  max-width: 600px;
-  width: 100%;
   padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
+.app-title {
   text-align: center;
+  font-size: 2rem;
   margin-bottom: 20px;
-}
-
-.task-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.task-form input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #0c0b0b;
-  border-radius: 4px;
-}
-
-.task-form button {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  background-color: #28a745;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.task-form button:hover {
-  background-color: #218838;
 }
 
 .task-list {
-  list-style-type: none;
-  padding: 0;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .task-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   margin-bottom: 10px;
-  background-color: #fafafa;
 }
 
-.task-item h3 {
-  margin: 0;
+.completed-task {
+  text-decoration: line-through;
+  background-color: #e0e0e0; /* Light gray background for completed tasks */
 }
 
-.task-item p {
-  margin: 5px 0 0;
+.search-container {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.task-item button {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.task-item button:hover {
-  background-color: #c82333;
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
 }
