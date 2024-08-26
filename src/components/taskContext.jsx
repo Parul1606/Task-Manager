@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useContext } from 'react';
+import PropTypes from 'prop-types'
 
 // Define the initial state and reducer
 const initialState = {
@@ -46,3 +47,8 @@ export const TaskProvider = ({ children }) => {
 };
 
 export const useTasks = () => useContext(TaskContext);
+
+//define prop-types for taskContext component
+TaskProvider.propTypes = {
+  children: PropTypes.node.isRequired
+};

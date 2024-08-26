@@ -1,6 +1,6 @@
-import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary'; // Adjust the path if necessary
 import TaskForm from './components/TaskForm';
-import TaskAccordion from '../src/components/TaskAccordian';
+import TaskAccordion from './components/TaskAccordian';
 import { useTasks } from './components/taskContext';
 import './App.css';
 
@@ -28,32 +28,34 @@ function App() {
   );
 
   return (
-    <div className="app">
-      <h1 className="app-title">Task Manager</h1>
-      <TaskForm onAddTask={addTask} />
-      <div className="search-container px-4 py-4">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search tasks..."
-          value={state.searchTerm}
-          onChange={(e) => dispatch({ type: 'SET_SEARCH_TERM', payload: e.target.value })}
-        />
+    <ErrorBoundary>
+      <div className="app">
+        <h1 className="app-title">Task Manager</h1>
+        <TaskForm onAddTask={addTask} />
+        <div className="search-container px-4 py-4">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search tasks..."
+            value={state.searchTerm}
+            onChange={(e) => dispatch({ type: 'SET_SEARCH_TERM', payload: e.target.value })}
+          />
+        </div>
+        <ul className="task-list">
+          {filteredTasks.map((task, index) => (
+            <li key={task.id} className={`task-item ${task.completed ? 'completed-task' : ''}`}>
+              <TaskAccordion
+                task={task}
+                index={index}
+                onDelete={() => deleteTask(task.id)}
+                onEdit={editTask}
+                onToggleComplete={() => toggleComplete(task.id)}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="task-list">
-        {filteredTasks.map((task, index) => (
-          <li key={task.id} className={`task-item ${task.completed ? 'completed-task' : ''}`}>
-            <TaskAccordion
-              task={task}
-              index={index}
-              onDelete={() => deleteTask(task.id)}
-              onEdit={editTask}
-              onToggleComplete={() => toggleComplete(task.id)}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    </ErrorBoundary>
   );
 }
 

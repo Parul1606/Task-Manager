@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
-import { TaskProvider } from './components/taskContext.jsx'; // Import TaskProvider
+import { TaskProvider } from './components/taskContext.jsx';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
