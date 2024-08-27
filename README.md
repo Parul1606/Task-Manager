@@ -1,61 +1,85 @@
 ```plaintext
 # Task Manager Application
 
-## Overview
+Welcome to the Task Manager Application! This modern web app is designed to help you efficiently manage your tasks with an intuitive and user-friendly interface. Built with cutting-edge technologies, it offers a range of features for task creation, management, and tracking.
 
-This is a Task Manager application built using **React**, **Tailwind CSS**, and the **Context API** for state management. The application allows users to add, edit, delete, and manage tasks with features like priority setting and due dates.
+## Table of Contents
 
-## Features
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Project Structure](#project-structure)
+- [Design Decisions](#design-decisions)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Introduction Video](#introduction-video)
+- [Screenshots](#screenshots)
 
-- **Task Creation**: Add new tasks with a title, description, priority, and due date.
-- **Task Management**: Edit, delete, and mark tasks as complete or incomplete.
-- **Accordion Display**: View task details in an accordion-style dropdown.
-- **State Management**: All task data is managed globally using React Context API.
-- **Error Handling**: A custom Error Boundary component handles errors gracefully.
+## Project Overview
 
-## Project Structure
+The Task Manager Application allows you to:
 
-- **App.js**: The main application component that renders the task list and provides context to other components.
-- **TaskForm.js**: A form component for adding new tasks.
-- **TaskList.js**: Renders a list of tasks, utilizing the `TaskAccordion` component for each task.
-- **TaskAccordion.js**: Displays task details in an expandable accordion format.
-- **ErrorBoundary.js**: Handles and displays errors that occur in the application.
-- **TaskContext.js**: Provides the state management logic for tasks using React Context.
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/task-manager.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd task-manager
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-## Usage
-
-- Open your browser and navigate to `http://localhost:5173` to view the application.
-- Use the form at the top of the page to add new tasks.
-- Click on a task title to view details in the accordion.
-- Use the buttons next to each task to edit, delete, or mark it as complete.
+- **Create Tasks**: Easily add tasks with a title, description, priority, and due date.
+- **Manage Tasks**: Edit, delete, and toggle the completion status of tasks.
+- **Accordion View**: View detailed information about each task in a collapsible accordion format.
+- **Global State Management**: Utilize React Context API for centralized state management.
+- **Error Handling**: Custom Error Boundary component ensures a smooth user experience by handling unexpected issues.
 
 ## Technologies Used
 
-- **React**: A JavaScript library for building user interfaces.
-- **Tailwind CSS**: A utility-first CSS framework for styling.
-- **Context API**: A React feature for managing global state in a simple way.
+Here’s a breakdown of the technologies used in this project:
 
-## Future Enhancements
+- **React**: Used for building interactive UIs with reusable components and efficient state handling.
+- **Tailwind CSS**: A utility-first CSS framework for building custom and responsive designs quickly.
+- **Bootstrap**: Provides additional pre-designed components and styles for a polished look.
+- **React Context API**: Manages global state across the application in a simple and efficient manner.
+- **Vite**: Chosen for its fast development server and efficient build process, enhancing productivity.
+- **Heroicons**: Utilized for clean and scalable icons throughout the app.
 
-- **Persistence**: Add support for local storage or a backend API to save tasks between sessions.
-- **Search/Filter**: Implement search or filtering options for tasks based on priority, due date, etc.
-- **Notifications**: Add reminders or notifications for upcoming due dates.
+## Setup and Installation
+
+To get the Task Manager Application running on your local machine:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/task-manager.git
+   ```
+2. **Navigate into the project directory**:
+   ```bash
+   cd task-manager
+   ```
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+4. **Start the development server with Vite**:
+   ```bash
+   npm run dev
+   ```
+   Your application will be available at [http://localhost:5173](http://localhost:5173).
+
+## Project Structure
+
+Here’s a brief overview of how the project is organized:
+
+- **/src**: Contains all the source files for the application.
+  - **/components**: Includes React components like `TaskAccordion`, `TaskForm`, `TaskList`, and more.
+  - **/context**: Houses React Context for task state management.
+  - **App.jsx**: Main component that integrates and renders the task list with routing.
+  - **index.js**: Entry point that renders the app.
+
+## Design Decisions
+
+Key design choices made during the development:
+
+- **State Management**: React Context API was selected for its simplicity and efficiency in managing global state.
+- **Styling**: Tailwind CSS was used for its flexibility and responsiveness, complemented by Bootstrap for additional styling options.
+- **Routing**: Vite was chosen for its fast build times and development server, enhancing the overall development experience.
+
+## Usage
+
+To use the Task Manager Application:
+
+- **Create Tasks**: Use the form at the top of the page to add new tasks with a title, description, priority, and due date.
+- **Manage Tasks**: Click on a task to view details in the accordion. Use the provided options to edit, delete, or mark the task as complete.
+- **Accordion View**: Expand or collapse task details to see more information.
