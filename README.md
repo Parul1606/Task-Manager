@@ -1,4 +1,3 @@
-```plaintext
 # Task Manager Application
 
 Welcome to the Task Manager Application! This modern web app is designed to help you efficiently manage your tasks with an intuitive and user-friendly interface. Built with cutting-edge technologies, it offers a range of features for task creation, management, and tracking.
