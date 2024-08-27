@@ -63,7 +63,6 @@ Here’s a brief overview of how the project is organized:
 
 - **/src**: Contains all the source files for the application.
   - **/components**: Includes React components like `TaskAccordion`, `TaskForm`, and more.
-  - **/context**: Houses React Context for task state management.
   - **App.jsx**: Main component that integrates and renders the task list with routing.
   - **index.js**: Entry point that renders the app.
 
