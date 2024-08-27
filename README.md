@@ -81,3 +81,21 @@ To use the Task Manager Application:
 - **Create Tasks**: Use the form at the top of the page to add new tasks with a title, description, priority, and due date.
 - **Manage Tasks**: Click on a task to view details in the accordion. Use the provided options to edit, delete, or mark the task as complete.
 - **Accordion View**: Expand or collapse task details to see more information.
+
+
+## Screenshots
+
+- **Create a new task**
+![image](https://github.com/user-attachments/assets/d9d11a32-5dbc-4b81-b654-00ac2ac92ddc)
+
+- **Search Functionality**
+![image](https://github.com/user-attachments/assets/c4c2ca53-3166-45c2-87f3-1fa9983b7784)
+
+- **Mark Complete using checkbox**
+![image](https://github.com/user-attachments/assets/5808b38d-0b8f-4587-afef-b4e5cd651a31)
+
+- **Toggle Accordian View**
+![image](https://github.com/user-attachments/assets/51ba8507-1f31-4cec-a849-44652c6779b8)
+
+- **Choose Either Today's Date or a Future Due Date**
+  ![image](https://github.com/user-attachments/assets/2afd7c23-e132-4bc8-b0a6-680a84d90bc9)
