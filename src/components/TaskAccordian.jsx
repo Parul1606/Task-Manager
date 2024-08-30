@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronUpIcon, ChevronDownIcon, TrashIcon, PencilIcon } from '@heroicons/react/solid';
+import { ChevronUpIcon, ChevronDownIcon, TrashIcon, PencilIcon } from '@heroicons/react/24/solid';
 
 function TaskAccordion({ task, index, onDelete, onEdit, onToggleComplete }) {
   const [isOpen, setIsOpen] = useState(false);
